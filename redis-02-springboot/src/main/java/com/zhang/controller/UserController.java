@@ -2,17 +2,14 @@ package com.zhang.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.zhang.mapper.UserMapper;
 import com.zhang.pojo.User;
 import com.zhang.service.UserService;
 import com.zhang.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisShardInfo;
 
 
 @RestController
@@ -76,6 +73,7 @@ public class UserController {
         
         jedis.auth("football");
         String s = jedis.flushAll();
+        jedis.flushDB();
         System.out.println(s);
         return s;
     }
