@@ -5,7 +5,7 @@ import redis.clients.jedis.Jedis;
 public class TestString {
 
     public static void main(String[] args) throws InterruptedException {
-        Jedis jedis = new Jedis("192.168.2.118", 6379);
+        Jedis jedis = new Jedis("192.168.1.105", 6379);
         
         //set,get
         jedis.set("keyName","hello");

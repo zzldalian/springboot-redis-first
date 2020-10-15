@@ -21,9 +21,9 @@ class Redis02SpringbootApplicationTests {
 
     @Test
     public void test() throws JsonProcessingException {
-        User user = new User("张志璘", 35);
+        //User user = new User("张志璘", 35);
         //String jsonUser = new ObjectMapper().writeValueAsString(user);
-        redisTemplate.opsForValue().set("user",user);
-        System.out.println(redisTemplate.opsForValue().get("user"));
+       // redisTemplate.opsForValue().set("user",user);
+       // System.out.println(redisTemplate.opsForValue().get("user"));
     }
 }
